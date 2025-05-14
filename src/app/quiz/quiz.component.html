@@ -1,0 +1,48 @@
+<div class="quiz-container">
+  <h1>Farah's Quiz</h1>
+  
+  <div *ngIf="!quizComplete" class="quiz-content">
+    <div class="question-container">
+      <h2>Question {{currentQuestionIndex + 1}} of {{questions.length}}</h2>
+      <p class="question">{{questions[currentQuestionIndex].question}}</p>
+    </div>
+
+    <div class="options-container">
+      <button 
+        *ngFor="let option of questions[currentQuestionIndex].options; let i = index"
+        class="option-button"
+        [class.selected]="selectedAnswer === i"
+        [class.correct]="selectedAnswer === i && isCorrect"
+        [class.incorrect]="selectedAnswer === i && !isCorrect"
+        (click)="selectAnswer(i)"
+        [disabled]="selectedAnswer !== null">
+        {{option}}
+      </button>
+    </div>
+
+    <div *ngIf="showExplanation" class="explanation">
+      <p [class.correct-text]="isCorrect" [class.incorrect-text]="!isCorrect">
+        {{isCorrect ? '🎉 Correct!' : '❌ Not quite!'}}
+      </p>
+      <p>{{questions[currentQuestionIndex].explanation}}</p>
+      <button class="next-button" (click)="nextQuestion()">
+        {{currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'See Results'}}
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="quizComplete" class="quiz-complete">
+    <h2>Quiz Complete! 🎉</h2>
+    <p>Your score: {{score}} out of {{questions.length}}</p>
+    <p class="message">
+      {{score === questions.length ? 
+        'Perfect score! You\'re my perfect queen' : 
+        score >= questions.length * 0.7 ? 
+        'Great job! I love you so much' : 
+        'I love you so much Fofy'}}
+    </p>
+    <button class="continue-button" (click)="continueToFinal()">
+      Continue to Final Message
+    </button>
+  </div>
+</div>

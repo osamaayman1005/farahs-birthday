@@ -1,0 +1,135 @@
+.final-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe3e3 100%);
+}
+
+.message-card {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+  position: relative;
+  margin: 1rem;
+}
+
+h1 {
+  color: #b55e5e;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.love-message {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #431515;
+  margin-bottom: 2rem;
+}
+
+.love-message p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.signature {
+  text-align: right;
+  margin-top: 3rem;
+  font-style: italic;
+  color: #b55e5e;
+}
+
+.signature p {
+  margin: 0.5rem 0;
+}
+
+.name {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add some decorative elements */
+.message-card::before {
+  content: '❤️';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .final-container {
+    padding: 0.5rem;
+  }
+
+  .message-card {
+    padding: 1.5rem;
+    margin: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .love-message {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .love-message p {
+    margin-bottom: 1rem;
+  }
+
+  .signature {
+    margin-top: 2rem;
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .message-card {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .love-message {
+    font-size: 0.95rem;
+  }
+
+  .message-card::before {
+    font-size: 1.5rem;
+    top: -15px;
+  }
+}

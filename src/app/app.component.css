@@ -1,0 +1,120 @@
+:host {
+  display: block;
+  min-height: 100vh;
+
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  font-size: 3rem;
+  margin: 2rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  background: linear-gradient(45deg, #734444, #db344d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1.5s ease-in;
+}
+
+button {
+  display: block;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background: linear-gradient(45deg, #ec03e0, #d51717);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Cat paw cursor */
+button {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🐾</text></svg>") 16 16, auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add some floating elements in the background */
+:host::before {
+  content: '🎂';
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  font-size: 2rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+:host::after {
+  content: '💖';
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  font-size: 2rem;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.welcome-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.subtitle {
+  color: #34495e;
+  font-size: 1.5rem;
+  margin: 1rem 0 2rem;
+  font-weight: 300;
+  animation: fadeIn 1.5s ease-in 0.5s both;
+}
+
+.cat-message {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  margin: 2rem auto;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.5s ease-in 1s both;
+}
+
+.cat-message p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}

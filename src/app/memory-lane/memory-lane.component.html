@@ -1,0 +1,46 @@
+<div class="memory-lane-container">
+  <h2>Our Journey Together</h2>
+  <p class="subtitle">Every moment with you is a treasure. Let's walk down memory lane together...</p>
+  
+  <ul class="timeline">
+    <li *ngFor="let memory of memories; let i = index" class="timeline-event">
+      <div class="timeline-content">
+        <div class="timeline-date">{{ memory.date | date:'MMMM d, y' }}</div>
+
+        <h3>{{ memory.title }}</h3>
+        <p class="memory-preview">{{ memory.description | slice:0:100 }}...</p>
+        <button (click)="showMemoryDetails(memory)">
+          <span>Read More</span>
+          <span class="button-icon">💫</span>
+        </button>
+      </div>
+    </li>
+  </ul>
+
+  <div *ngIf="areAllMemoriesViewed()" class="next-adventure">
+    <p>Are you ready for the next adventure? it's a bit of a challenge but I know you will like it!</p>
+    <button class="next-button" (click)="startGame()">
+      <span>Start the Game!</span>
+      <span class="button-icon">🎲</span>
+    </button>
+  </div>
+
+  <div *ngIf="selectedMemory" class="memory-details-overlay" (click)="closeMemoryDetails()">
+    <div class="memory-details" (click)="$event.stopPropagation()">
+      <div class="memory-header">
+        <h3>{{ selectedMemory.title }}</h3>
+        <span class="memory-date">{{ selectedMemory.date | date:'MMMM d, y' }}</span>
+      </div>
+      
+      <div class="memory-content">
+        <img *ngIf="selectedMemory.image" [src]="selectedMemory.image" alt="{{ selectedMemory.title }}" class="memory-image">
+        <p class="memory-description">{{ selectedMemory.description }}</p>
+      </div>
+
+      <button class="close-button" (click)="closeMemoryDetails()">
+        <span>Close</span>
+        <span class="button-icon">✨</span>
+      </button>
+    </div>
+  </div>
+</div>

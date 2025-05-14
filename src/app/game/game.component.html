@@ -1,0 +1,52 @@
+<div class="game-container">
+  <h1>Farah's Special Sudoku</h1>
+  
+  <div class="game-info">
+    <div class="timer">
+      <span class="timer-icon">⏱️</span>
+      <span class="timer-value">{{ getTimeString() }}</span>
+    </div>
+    <div class="game-message">{{ gameMessage }}</div>
+  </div>
+
+  <div class="sudoku-iframe-container">
+    <iframe 
+      src="https://sudoku.com/easy/" 
+      frameborder="0" 
+      class="sudoku-iframe"
+      title="Sudoku Game"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <button class="find-kimo-button" (click)="showFindKimoGame()">
+    🐱 Next 🐱
+  </button>
+
+  <div *ngIf="isFindKimoGameVisible" class="find-kimo-game">
+    <div class="find-kimo-overlay">
+      <div class="find-kimo-content">
+        <h2>Can you find Kimo in this picture?</h2>
+        <div class="kimo-image-container">
+          <img 
+            src="assets/images/kimo-hiding.jpg" 
+            alt="Find Kimo" 
+            class="kimo-image"
+            (click)="checkKimoClick($event)"
+            #kimoImage>
+        </div>
+        <p class="hint-text">Click where you think Kimo is hiding!</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isComplete" class="game-over">
+    <h2>🎉 Amazing! 🎉</h2>
+    <p>You found Kimo and he says: MEOOOOOOOOOW</p>
+    <P>Now, how about a little quiz? 🧐</P>
+    <button class="next-button" (click)="continueToQuiz()">
+      Continue to Quiz
+    </button>
+  </div>
+</div>
