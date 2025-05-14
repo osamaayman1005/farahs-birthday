@@ -15,7 +15,7 @@ export class GameComponent implements OnInit, OnDestroy {
   timer: number = 0;
   timerInterval: any;
   isFindKimoGameVisible: boolean = false;
-  kimoPosition = { x: 400, y: 300 }; // Centered position for 800x600 image
+  kimoPosition = { x: 50, y: 650 }; // Centered position for 800x600 image
   clickRadius: number = 100; // Increased radius for easier finding
 
   constructor(private router: Router) {}

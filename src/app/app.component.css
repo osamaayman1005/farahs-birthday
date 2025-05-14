@@ -65,6 +65,7 @@ button {
   left: 5%;
   font-size: 2rem;
   animation: float 6s ease-in-out infinite;
+
 }
 
 :host::after {
@@ -74,6 +75,7 @@ button {
   right: 5%;
   font-size: 2rem;
   animation: float 8s ease-in-out infinite;
+  z-index: -1;
 }
 
 @keyframes float {

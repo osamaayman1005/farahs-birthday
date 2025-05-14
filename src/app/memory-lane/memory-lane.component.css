@@ -57,7 +57,8 @@ h2 {
 }
 
 .timeline-content {
-  width: 45%;
+  width: 90%;
+  margin: 0 auto;
   padding: 1.5rem;
   background: white;
   border-radius: 15px;
@@ -183,23 +184,22 @@ h2 {
   }
 
   .timeline::before {
-    left: 30px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .timeline-event {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .timeline-date {
-    left: 30px;
-    transform: none;
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .timeline-content {
-    width: calc(100% - 80px);
-    margin-left: 80px;
+    width: 90%;
+    margin: 0 auto;
     padding: 1rem;
   }
 
@@ -237,8 +237,9 @@ h2 {
   }
 
   .timeline-content {
-    width: calc(100% - 60px);
-    margin-left: 60px;
+    width: 95%;
+    margin: 0 auto;
+    padding: 0.7rem;
   }
 
   .timeline-content h3 {

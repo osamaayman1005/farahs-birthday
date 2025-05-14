@@ -36,18 +36,23 @@ h1 {
 .sudoku-iframe-container {
   width: 100%;
   max-width: 600px;
+  height: 540px;
   margin: 0 auto 2rem;
   background: white;
   padding: 1rem;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .sudoku-iframe {
   width: 100%;
-  height: 600px;
-  border: none;
-  border-radius: 10px;
+  height: 100%;
+  background-color: white;
+  
+  z-index: 500;
+  overflow: hidden;
+
 }
 
 .find-kimo-button {
@@ -257,7 +262,10 @@ h1 {
   }
 
   .sudoku-iframe {
-    height: 400px;
+  
+   
+    overflow: hidden;
+    
   }
 
   .find-kimo-content h2 {
